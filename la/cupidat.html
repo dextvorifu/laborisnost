@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input and Output Fields</title>
+    <script>
+        function initializeFields() {
+            // Initialize input field
+            document.getElementById('inputField').value = '';
+
+            // Initialize output field
+            document.getElementById('outputField').innerText = '';
+        }
+
+        window.onload = initializeFields;
+    </script>
+</head>
+<body>
+    <form>
+        <label for="inputField">Input:</label>
+        <input type="text" id="inputField"><br><br>
+        
+        <label for="outputField">Output:</label>
+        <div id="outputField"></div>
+    </form>
+</body>
+</html>
