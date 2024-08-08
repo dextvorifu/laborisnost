@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Styles Example</title>
+</head>
+<body>
+    <div id="myElement">Hello World!</div>
+
+    <script>
+        const markDef = {
+            color: 'blue',
+            fontSize: '16px',
+            fontWeight: 'bold',
+            backgroundColor: 'lightgrey'
+        };
+
+        function getStyles(markDef) {
+            let styles = '';
+
+            for (const [property, value] of Object.entries(markDef)) {
+                // Convert camelCase to kebab-case
+                const cssProperty = property.replace(/([A-Z])/g, '-$1').toLowerCase();
+                styles += `${cssProperty}: ${value}; `;
+            }
+
+            return styles.trim();
+        }
+
+        // Get the element and apply styles
+        const myElement = document.getElementById('myElement');
+        myElement.style.cssText = getStyles(markDef);
+    </script>
+</body>
+</html>
